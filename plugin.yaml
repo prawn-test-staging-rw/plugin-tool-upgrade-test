@@ -18,6 +18,8 @@ lint:
       command: ["${workspace}/.trunk/my_custom_linter.sh"]
       tools:
         - gh
+        - pylint
+        - toolbox
 tools:
   definitions:
     - name: toolbox
