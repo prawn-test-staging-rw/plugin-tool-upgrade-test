@@ -1,0 +1,23 @@
+version: 0.1
+lint:
+  linters:
+    - name: MyCustomLinter
+      type: pass_fail
+      files: [ALL]
+      success_codes: [0, 1]
+      command: ["${workspace}/.trunk/my_custom_linter.sh"]
+      tools:
+        - gh
+tools:
+  definitions:
+    - name: toolbox
+      download: toolbox
+      known_good_version: 0.0.1
+      shims: [trunk-toolbox]
+    - name: gh
+      download: gh
+      known_good_version: 2.27.0
+      environment:
+        - name: PATH
+          list: ["${tool}/bin"]
+      shims: [gh]
