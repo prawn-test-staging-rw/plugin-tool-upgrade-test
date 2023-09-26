@@ -1,4 +1,14 @@
 version: 0.1
+downloads:
+  - name: toolbox
+    downloads:
+      - os:
+          linux: unknown-linux-gnu
+          macos: apple-darwin
+        cpu:
+          x86_64: x86_64
+          arm_64: aarch64
+        url: https://github.com/trunk-io/toolbox/releases/download/${version}/trunk-toolbox-${version}-${cpu}-${os}.tar.gz
 lint:
   linters:
     - name: MyCustomLinter
